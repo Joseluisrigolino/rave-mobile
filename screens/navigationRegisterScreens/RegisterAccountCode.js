@@ -3,16 +3,17 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { BotonGrad}  from '../../components/Boton.js';
 import { MailInput } from '../../components/MailInput.js';
-
+import { PassInput } from '../../components/PassInput.js';
 
 
 export default function RegisterAccountScreen() {
-  const textButton = "Enviar mail";
+  const textButton = "Registrarse";
     return (
       <View style={styles.container}>
-      <Text style={styles.titulo}>Restablezcamos</Text>
-      <Text style={styles.subTitulo}>Escribi tu mail donde sera enviado un codigo de confirmacion</Text>
+      <Text style={styles.titulo}>Ingrese Codigo</Text>
+      <Text style={styles.subTitulo}>Registra tus datos</Text>
       <MailInput></MailInput>
+      <PassInput></PassInput>
       <BotonGrad textButtonParam={textButton}></BotonGrad>
       <StatusBar style="auto" />
     </View>
@@ -34,12 +35,25 @@ const styles = StyleSheet.create({
       fontWeight: "bold",
   
     },
-    subTitulo: { 
-      marginTop: 3,
-      fontSize: 15,
+    subTitulo: {
+      fontSize: 20,
       color: 'gray',
-    },  
-    
+    },
+    textInput: {
+      borderWidth: 1,
+      paddingStart: 30,
+      borderColor: "gray",
+      padding: 10,
+      width: "80%",
+      marginTop: 20,
+      borderRadius: 30,
+      backgroundColor: "#fff",
+    },
+    olvidasteContrasenia: {
+      fontSize: 14,
+      color: "gray",
+      marginTop: 20
+    },
     
     
   });
