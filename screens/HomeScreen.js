@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import BotonGrad from '../rave-mobile/components/Boton.js';
+import { BotonGrad } from '../components/Boton';
 
-export default function App() {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Hola!</Text>
