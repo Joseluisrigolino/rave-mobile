@@ -1,24 +1,21 @@
+// HomeScreen.js
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { BotonGrad } from '../components/Boton';
+import { StyleSheet, Text, View } from 'react-native';
+import { BotonGrad}  from '../components/Boton.js';
+import { MailInput } from '../components/MailInput.js';
+import { PassInput } from '../components/PassInput.js';
 
-export default function HomeScreen() {
+export function HomeScreen() {
+  const textButton = "Ingresar";
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Hola!</Text>
+      <Text style={styles.titulo}>Bienvenido a Rave</Text>
       <Text style={styles.subTitulo}>Ingresa a tu cuenta</Text>
-      <TextInput 
-      placeholder='aaa@email.com' 
-      style={styles.textInput}>
-
-      </TextInput>
-      <TextInput 
-      placeholder='contraseña'
-      style={styles.textInput}>
-      
-      </TextInput>
+      <MailInput />
+      <PassInput />
       <Text style={styles.olvidasteContrasenia}>Olvidaste tu contraseña?</Text>
-      <BotonGrad></BotonGrad>
+      <BotonGrad textButtonParam={textButton}/>
       <Text style={styles.olvidasteContrasenia}>No tenes cuenta?</Text>
       <StatusBar style="auto" />
     </View>
@@ -33,30 +30,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titulo: {
-    fontSize: 70,
+    fontSize: 42,
     color: '#34434D',
     fontWeight: "bold",
-
   },
   subTitulo: {
     fontSize: 20,
     color: 'gray',
-  },
-  textInput: {
-    borderWidth: 1,
-    paddingStart: 30,
-    borderColor: "gray",
-    padding: 10,
-    width: "80%",
-    marginTop: 20,
-    borderRadius: 30,
-    backgroundColor: "#fff",
   },
   olvidasteContrasenia: {
     fontSize: 14,
     color: "gray",
     marginTop: 20
   },
-  
-  
 });

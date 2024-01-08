@@ -3,17 +3,16 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 
-export default function BotonGrad() {
-
+export default function BotonGrad(textButtonParam) {
+    console.log("Valor de textButtonParam:", textButtonParam); // Agrega esta línea
     return (
         <TouchableOpacity style={styles.container}>
         <LinearGradient
-            // Button Linear Gradient
             colors={['#a5a5f4', '#00d4ff']}
-        start={{x: 1, y: 0}}
-        end={{x: 0, y: 1}}     
+            start={{x: 1, y: 0}}
+            end={{x: 0, y: 1}}     
             style={styles.boton}>
-            <Text style={styles.text}>Ingresar</Text>
+            <Text style={styles.text}>{String(textButtonParam)}</Text>
         </LinearGradient>
         </TouchableOpacity>
     )
