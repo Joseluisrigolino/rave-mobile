@@ -2,11 +2,11 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { BotonGrad}  from '../components/Boton.js';
-import { MailInput } from '../components/MailInput.js';
-import { PassInput } from '../components/PassInput.js';
+import { BotonGrad}  from '../components/Boton';
+import { MailInput } from '../components/MailInput';
+import { PassInput } from '../components/PassInput';
 
-export function HomeScreen() {
+export default function HomeScreen() {
   const textButton = "Ingresar";
   return (
     <View style={styles.container}>
@@ -44,3 +44,4 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
 });
+

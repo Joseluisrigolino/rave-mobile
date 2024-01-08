@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import React from 'react'
 
 
-export default function MailInput() {
+export function MailInput() {
   return (
     <View>
         <TextInput 
@@ -27,3 +27,5 @@ const styles = StyleSheet.create({
     
         
 });
+
+export default MailInput;

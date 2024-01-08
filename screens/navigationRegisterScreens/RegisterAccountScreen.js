@@ -1,20 +1,20 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { BotonGrad}  from '../components/Boton.js';
-import { MailInput } from '../components/MailInput.js';
-import { PassInput } from '../components/PassInput.js';
+import { BotonGrad}  from '../../components/Boton.js';
+import { MailInput } from '../../components/MailInput.js';
+import { PassInput } from '../../components/PassInput.js';
 
 
 export default function RegisterAccountScreen() {
+  const textButton = "Registrarse";
     return (
-
       <View style={styles.container}>
       <Text style={styles.titulo}>Registremonos</Text>
       <Text style={styles.subTitulo}>Registra tus datos</Text>
       <MailInput></MailInput>
       <PassInput></PassInput>
-      <BotonGrad></BotonGrad>
+      <BotonGrad textButtonParam={textButton}></BotonGrad>
       <StatusBar style="auto" />
     </View>
     );
