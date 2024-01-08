@@ -6,7 +6,7 @@ import BotonGrad from '../rave-mobile/components/Boton.js';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Hola!</Text>
+      <Text style={styles.titulo}>Bienvenido a Rave</Text>
       <Text style={styles.subTitulo}>Ingresa a tu cuenta</Text>
       <TextInput 
       placeholder='aaa@email.com' 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titulo: {
-    fontSize: 70,
+    fontSize: 42,
     color: '#34434D',
     fontWeight: "bold",
 

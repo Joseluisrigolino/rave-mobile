@@ -23,8 +23,8 @@ export default function BotonGrad() {
 const styles = StyleSheet.create({
     container: {
     alignItems: 'center',
-      width: 200,
-      marginTop: 60
+    width: 200,
+    marginTop: 60
 
     },
     text: {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
 
-      },
+    },
     
 
 });
