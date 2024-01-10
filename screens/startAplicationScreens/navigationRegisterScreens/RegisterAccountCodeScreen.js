@@ -9,10 +9,8 @@ de usuario
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { BotonGrad}  from '../../components/Boton.js';
-import { MailInput } from '../../components/MailInput.js';
-import { PassInput } from '../../components/PassInput.js';
-import CodeRestInput from '../../components/CodeRestInput.js';
+import { BotonGrad}  from '../../../components/Boton.js';
+import CodeRestInput from '../../../components/CodeRestInput.js';
 
 
 export default function RegisterAccountScreen() {
