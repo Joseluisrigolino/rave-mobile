@@ -9,17 +9,17 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { BotonGrad}  from '../../components/Boton.js';
-import { MailInput } from '../../components/MailInput.js';
+import { CodeRestInput } from '../../components/CodeRestInput.js';
 
 
 
 export default function RegisterAccountCodeScreen() {
   const textButton = "Enviar mail";
     return (
-      <View style={styles.container}>
-      <Text style={styles.titulo}>Restablezcamos</Text>
-      <Text style={styles.subTitulo}>Escribi tu mail donde sera enviado un codigo de confirmacion</Text>
-      <MailInput></MailInput>
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Ingrese Codigo</Text>
+      <Text style={styles.subTitulo}>Recupera tus datos</Text>
+      <CodeRestInput></CodeRestInput>
       <BotonGrad textButtonParam={textButton}></BotonGrad>
       <StatusBar style="auto" />
     </View>

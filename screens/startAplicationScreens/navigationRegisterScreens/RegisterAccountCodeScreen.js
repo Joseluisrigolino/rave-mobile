@@ -18,7 +18,7 @@ import CodeRestInput from '../../components/CodeRestInput.js';
 export default function RegisterAccountScreen() {
   const textButton = "Registrarse";
     return (
-      <View style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.titulo}>Ingrese Codigo</Text>
       <Text style={styles.subTitulo}>Registra tus datos</Text>
       <CodeRestInput></CodeRestInput>

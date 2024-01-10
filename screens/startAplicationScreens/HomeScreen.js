@@ -6,9 +6,9 @@ Pantalla de inicio en la app
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { BotonGrad}  from '../components/Boton';
-import { MailInput } from '../components/MailInput';
-import { PassInput } from '../components/PassInput';
+import { BotonGrad}  from '../../components/Boton';
+import { MailInput } from '../../components/MailInput';
+import { PassInput } from '../../components/PassInput';
 
 export default function HomeScreen() {
   const textButton = "Ingresar";
