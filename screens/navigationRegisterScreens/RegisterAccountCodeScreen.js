@@ -1,3 +1,11 @@
+/*
+
+Pantalla para escribir codigo enviado por mail dentro de la app para registro
+de usuario
+
+*/
+
+
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
