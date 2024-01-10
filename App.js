@@ -12,7 +12,7 @@ import RestoreAccountCodeScreen from "./screens/startAplicationScreens/navigatio
 export default function App() {
   return (
 
-    //<HomeScreen />
+    <HomeScreen />
     
     //<RegisterAccountScreen />
 
@@ -21,6 +21,6 @@ export default function App() {
 
     //<RestoreAccountScreen />
 
-    <RestoreAccountCodeScreen />
+    //<RestoreAccountCodeScreen />
   );
 }
