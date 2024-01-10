@@ -1,13 +1,26 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import React from 'react'
+import React, {useState} from 'react'
+import { inputNumberOnly } from "../utils/InputNumberOnly";
 
 
-export function MailInput() {
+export function CodeRestInput() {
+
+  const [codeInput, setCodeInput] = useState('');
+
+  const handleInputChange = (text) => {
+    const numericValue = inputNumberOnly(text);
+    setCodeInput(numericValue)
+  };
   return (
     <View>
         <TextInput 
-        placeholder='aaa@email.com' 
-        style={styles.textInput}>
+        placeholder='Codigo enviado al mail' 
+        style={styles.textInput}
+        keyboardType='numeric'
+        value={codeInput}
+        onChangeText={handleInputChange}
+        >
+        
         </TextInput>
     </View>
   )
@@ -28,4 +41,4 @@ const styles = StyleSheet.create({
         
 });
 
-export default MailInput;
+export default CodeRestInput;

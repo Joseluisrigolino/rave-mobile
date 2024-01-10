@@ -12,6 +12,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { BotonGrad}  from '../../components/Boton.js';
 import { MailInput } from '../../components/MailInput.js';
 import { PassInput } from '../../components/PassInput.js';
+import CodeRestInput from '../../components/CodeRestInput.js';
 
 
 export default function RegisterAccountScreen() {
@@ -20,8 +21,7 @@ export default function RegisterAccountScreen() {
       <View style={styles.container}>
       <Text style={styles.titulo}>Ingrese Codigo</Text>
       <Text style={styles.subTitulo}>Registra tus datos</Text>
-      <MailInput></MailInput>
-      <PassInput></PassInput>
+      <CodeRestInput></CodeRestInput>
       <BotonGrad textButtonParam={textButton}></BotonGrad>
       <StatusBar style="auto" />
     </View>
