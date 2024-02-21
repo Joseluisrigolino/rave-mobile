@@ -11,16 +11,23 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { BotonGrad}  from '../../../components/Boton.js';
 import CodeRestInput from '../../../components/CodeRestInput.js';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function RegisterAccountScreen() {
   const textButton = "Registrarse";
+
+  const navigation = useNavigation(); // Obtiene el objeto de navegación
+  //definir navegacion
+  const toLogin = () => {
+    navigation.navigate('HomeScreen'); // Navega a la pantalla "RegisterAccountScreen"
+  };
     return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Ingrese Codigo</Text>
       <Text style={styles.subTitulo}>Registra tus datos</Text>
       <CodeRestInput></CodeRestInput>
-      <BotonGrad textButtonParam={textButton}></BotonGrad>
+      <BotonGrad onPress={toLogin} textButtonParam={textButton}></BotonGrad>
       <StatusBar style="auto" />
     </View>
     );

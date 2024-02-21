@@ -7,20 +7,43 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { BotonGrad}  from '../../components/Boton';
+import { BotonGradGoogle}  from '../../components/BotonGoogle';
 import { MailInput } from '../../components/MailInput';
 import { PassInput } from '../../components/PassInput';
+//navegacion
+import { useNavigation } from '@react-navigation/native';
+
+
 
 export default function HomeScreen() {
   const textButton = "Ingresar";
+  const googleButton = "Ingresar con google";
+  const navigation = useNavigation(); // Obtiene el objeto de navegación
+  //definir navegacion
+  const toRegisterAccount = () => {
+    navigation.navigate('RegisterAccountScreen'); // Navega a la pantalla "RegisterAccountScreen"
+  };
+
+  const toRestoreAccountScreen = () => {
+    navigation.navigate('RestoreAccountScreen'); // Navega a la pantalla "RegisterAccountScreen"
+  };
+
+  /*const toIndex = () => {
+    navigation.navigate('Index'); // Navega a la pantalla "Index"
+  };
+  */
+
   return (
     <View style={styles.container}>
+            
       <Text style={styles.titulo}>Bienvenido a Rave</Text>
       <Text style={styles.subTitulo}>Ingresa a tu cuenta</Text>
       <MailInput />
       <PassInput />
-      <Text style={styles.olvidasteContrasenia}>Olvidaste tu contraseña?</Text>
+      <Text onPress={toRestoreAccountScreen} style={styles.olvidasteContrasenia}>Olvidaste tu contraseña?</Text>
       <BotonGrad textButtonParam={textButton}/>
-      <Text style={styles.olvidasteContrasenia}>No tenes cuenta?</Text>
+      <BotonGradGoogle textButtonParam={googleButton}/>
+      <Text onPress={toRegisterAccount} style={styles.olvidasteContrasenia}>No tenes cuenta?</Text>
       <StatusBar style="auto" />
     </View>
   );

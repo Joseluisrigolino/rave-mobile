@@ -1,9 +1,9 @@
 import React from "react";
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-
-export function BotonGrad({textButtonParam, containerStyle, onPress}) {
+export function BotonGradGoogle({textButtonParam, containerStyle, onPress}) {
     console.log("Valor de textButtonParam:", textButtonParam); // Agrega esta línea
     return (
         <TouchableOpacity style={[styles.container, containerStyle]} onPress={onPress}>
@@ -12,7 +12,7 @@ export function BotonGrad({textButtonParam, containerStyle, onPress}) {
             start={{x: 1, y: 0}}
             end={{x: 0, y: 1}}     
             style={styles.boton}>
-            <Text style={styles.text}>{String(textButtonParam)}</Text>
+            <Text style={styles.text}><Ionicons name="logo-google" size={15} color="black" /> {String(textButtonParam)}</Text>
         </LinearGradient>
         </TouchableOpacity>
     )
@@ -22,8 +22,8 @@ export function BotonGrad({textButtonParam, containerStyle, onPress}) {
 const styles = StyleSheet.create({
     container: {
     alignItems: 'center',
-    width: 200,
-    marginTop: 40
+    width: 240,
+    marginTop: 10
 
     },
     text: {
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default BotonGrad;
+export default BotonGradGoogle;
