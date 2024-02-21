@@ -20,7 +20,7 @@ export default function RegisterAccountCodeScreen() {
   const navigation = useNavigation(); // Obtiene el objeto de navegación
 
   const toLogin = () => {
-    navigation.navigate('HomeScreen'); // Navega a la pantalla "RegisterAccountScreen"
+    navigation.navigate('Login'); // Navega a la pantalla "RegisterAccountScreen"
   };
     return (
     <View style={styles.container}>
