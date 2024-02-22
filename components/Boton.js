@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 
 
 export function BotonGrad({textButtonParam, containerStyle, onPress}) {
-    console.log("Valor de textButtonParam:", textButtonParam); // Agrega esta línea
+    
     return (
         <TouchableOpacity style={[styles.container, containerStyle]} onPress={onPress}>
         <LinearGradient

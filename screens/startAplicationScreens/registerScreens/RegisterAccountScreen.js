@@ -3,7 +3,6 @@
 Pantalla para registrarse dentro de la app
 
 */
-
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
@@ -11,6 +10,9 @@ import { BotonGrad}  from '../../../components/Boton.js';
 import { BotonGradGoogle}  from '../../../components/BotonGoogle.js';
 import { MailInput } from '../../../components/MailInput.js';
 import { PassInput } from '../../../components/PassInput.js';
+import { TextInputName } from '../../../components/TextInputName.js';
+
+
 //navegacion
 import { useNavigation } from '@react-navigation/native';
 
@@ -25,9 +27,12 @@ export default function RegisterAccountScreen() {
 
   
     return (
+
       <View style={styles.container}>
       <Text style={styles.titulo}>Registremonos</Text>
       <Text style={styles.subTitulo}>Registra tus datos</Text>
+      <TextInputName textParam={"Nombre"}></TextInputName>
+      <TextInputName textParam={"Apellido"}></TextInputName>
       <MailInput></MailInput>
       <PassInput></PassInput>
       <BotonGrad onPress={toRegisterAccountCode} textButtonParam={textButton}></BotonGrad>
