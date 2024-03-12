@@ -1,6 +1,7 @@
 // App.js
 import React from 'react';
-import HomeScreen from './screens/startAplicationScreens/LoginScreen';
+import LoginScreen from './screens/startAplicationScreens/LoginScreen';
+import HomeScreen from './screens/mainAplicationScreens/HomeScreen';
 import { View } from 'react-native-web';
 //importar register nav
 import RegisterAccountScreen from './screens/startAplicationScreens/registerScreens/RegisterAccountScreen';
@@ -18,25 +19,19 @@ export default function App() {
   const Stack = createStackNavigator();
   return (
 
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen">
-        <Stack.Screen name="Login" component={HomeScreen} />
+     <NavigationContainer>
+      <Stack.Navigator initialRouteName="RegisterAccountScreen">
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="RegisterAccountScreen" component={RegisterAccountScreen} />
         <Stack.Screen name="RegisterAccountCodeScreen" component={RegisterAccountCodeScreen} />
         <Stack.Screen name="RestoreAccountCodeScreen" component={RestoreAccountCodeScreen} />
         <Stack.Screen name="RestoreAccountScreen" component={RestoreAccountScreen} />
         <Stack.Screen name="RestoreAccountCodePosScreen" component={RestoreAccountCodePosScreen} />
+        <Stack.Screen name="Index" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    //<HomeScreen />
+
     
-    //<RegisterAccountScreen />
 
-    //<RegisterAccountCodeScreen />
-
-
-    //<RestoreAccountScreen />
-
-    //<RestoreAccountCodeScreen />
   );
 }

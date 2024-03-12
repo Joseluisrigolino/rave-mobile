@@ -15,17 +15,17 @@ import { useNavigation } from '@react-navigation/native';
 
 
 
-export default function HomeScreen() {
+export default function LoginScreen() {
   const textButton = "Ingresar";
   const googleButton = "Ingresar con google";
   const navigation = useNavigation(); // Obtiene el objeto de navegación
   //definir navegacion
   const toRegisterAccount = () => {
-    navigation.navigate('RegisterAccountScreen'); // Navega a la pantalla "RegisterAccountScreen"
+    navigation.navigate('RegisterAccountScreen'); // Esta funcion navega a la pantalla "RegisterAccountScreen"
   };
 
   const toRestoreAccountScreen = () => {
-    navigation.navigate('RestoreAccountScreen'); // Navega a la pantalla "RegisterAccountScreen"
+    navigation.navigate('RestoreAccountScreen'); // Esta funcion navega a la pantalla "RestoreAccountScreen"
   };
 
   /*const toIndex = () => {
