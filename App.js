@@ -20,7 +20,7 @@ export default function App() {
   return (
 
      <NavigationContainer>
-      <Stack.Navigator initialRouteName="RegisterAccountScreen">
+      <Stack.Navigator initialRouteName="Index">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="RegisterAccountScreen" component={RegisterAccountScreen} />
         <Stack.Screen name="RegisterAccountCodeScreen" component={RegisterAccountCodeScreen} />

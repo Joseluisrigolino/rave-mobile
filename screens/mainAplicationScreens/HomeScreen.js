@@ -1,16 +1,18 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, TextInput  } from 'react-native';
+import {React, useState} from 'react';
+import {  View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, TextInput  } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/FontAwesome';
 
 const HomeScreen = () => {
+  const [liked, setLiked] = useState(false);
+
   return (
    
 <View style={styles.container}>
     <View style={styles.header}>
       {/* Los otros elementos de tu header irían aquí */}
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Rave App</Text>
+        <Text style={styles.headerText}>Rave App</Text>
       </View>
       {/* Los otros elementos de tu header irían aquí */}
     </View>
@@ -95,34 +97,14 @@ const HomeScreen = () => {
     <ScrollView style={styles.cardsContainer}>
         
             <View style={styles.card}>
+            <TouchableOpacity
+            style={styles.likeButton}
+            onPress={() => setLiked(!liked)}
+            >
+            <Icon2 name={liked ? "heart" : "heart-o"} size={24} color={liked ? "red" : "grey"} />
+      </TouchableOpacity>
                 <Image
                 source={{ uri: 'https://picsum.photos/200' }}
-                style={styles.coffeeImage}
-                />
-                <Text style={styles.coffeeName}>Fiesta en casa</Text>
-                <View style={styles.ratingContainer}>
-                <Text style={styles.rating}>18/06/2002</Text>
-                </View>
-                <Text style={styles.volume}>Fiesta en casa de un amigo</Text>
-                <TouchableOpacity style={styles.addButton}>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.card}>
-                <Image
-                source={{ uri: 'https://picsum.photos/600' }}
-                style={styles.coffeeImage}
-                />
-                <Text style={styles.coffeeName}>Fiesta en casa</Text>
-                <View style={styles.ratingContainer}>
-                <Text style={styles.rating}>18/06/2002</Text>
-                </View>
-                <Text style={styles.volume}>Fiesta en casa de un amigo</Text>
-                <TouchableOpacity style={styles.addButton}>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.card}>
-                <Image
-                source={{ uri: 'https://picsum.photos/400' }}
                 style={styles.coffeeImage}
                 />
                 <Text style={styles.coffeeName}>Fiesta en casa</Text>
@@ -144,18 +126,24 @@ const HomeScreen = () => {
 
 
     <View style={styles.footer}>
-        <TouchableOpacity>
-          <Icon name="home" style={styles.footerIcon} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Icon name="heart" style={styles.footerIcon} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Icon name="user" style={styles.footerIcon} />
-        <Icon name="music" style={[styles.footerIcon, styles.musicIcon]} />
+      <TouchableOpacity>
+        <Icon2 name="home" style={styles.footerIcon} />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Icon2 name="heart" style={styles.footerIcon} />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Icon2 name="user" style={styles.footerIcon} />
+        <Icon2 name="music" style={[styles.footerIcon, styles.musicIcon]} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => {/* Navegar a la página de agregar evento */}}>
         <Icon2 name="calendar-plus-o" size={24} color="white" />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => {/* Navegar a Entradas Adquiridas */}}>
+        <Icon2 name="ticket" size={24} color="white" style={styles.footerIcon} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => {/* Navegar a Novedades */}}>
+        <Icon2 name="newspaper-o" size={24} color="white" style={styles.footerIcon} />
       </TouchableOpacity>
       </View>
 
@@ -335,6 +323,12 @@ coffeeImage: {
     fontSize: 18, // Tamaño de fuente que coincida con tu diseño
     fontWeight: 'bold', // Si el texto es en negrita
     // Agrega otros estilos de texto como color, etc., según sea necesario
+  },
+  likeButton: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    padding: 10,
   },
 });
 

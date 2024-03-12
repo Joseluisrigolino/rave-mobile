@@ -2,14 +2,13 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import React from 'react'
 
 
-export function TextInputName(textParam) {
+export function TextInputName({textParam}) {
 
-  const placeholderText = typeof textParam === 'object' ? textParam.name : String(textParam);
-  console.log
+  
   return (
     <View>
         <TextInput 
-        placeholder={placeholderText}
+        placeholder={textParam}
         style={styles.textInput}>
         </TextInput>
     </View>
