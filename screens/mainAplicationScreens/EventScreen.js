@@ -1,54 +1,63 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Picker } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const EventScreen = () => {
-    const [selectedTicket, setSelectedTicket] = useState("1");
-  
+    const [selectedQuantity, setSelectedQuantity] = useState('1');
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    const toggleFavorite = () => setIsFavorite(!isFavorite);
+
     return (
         <ScrollView style={styles.container}>
-            <Text style={styles.eventName}>Nombre del evento</Text>
-            
-            <View style={styles.imageContainer}>
-                <Image source={{ uri: 'https://via.placeholder.com/150' }} style={styles.eventImage} />
-            </View>
-            
-            <Text style={styles.eventDescription}>Descripción del evento</Text>
-            
+            <Image source={{ uri: 'https://picsum.photos/500' }} style={styles.eventImage} />
             <View style={styles.detailsContainer}>
-                <Text style={styles.eventTime}>Horario del evento: 23:50hs a 07:00hs</Text>
-                <Text style={styles.eventLocation}>Av. Cnel. Niceto Vega 6599 - Capital Federal</Text>
-                
-                <TouchableOpacity style={styles.directionButton}>
-                    <Text style={styles.directionButtonText}>Cómo llegar</Text>
-                </TouchableOpacity>
-                
-                <TouchableOpacity style={styles.favoriteButton}>
-                    <Icon name="heart-o" size={20} color="#000" />
-                    <Text style={styles.favoriteButtonText}>Agregar a Favoritos</Text>
+                <Text style={styles.eventName}>Fiesta de mi amigo</Text>
+                <View style={styles.priceRatingContainer}>
+                    <Text style={styles.eventPrice}>$2500</Text>
+                    <Icon name="star" size={20} color="yellow" />
+                    <Text style={styles.eventRating}>(4.9)</Text>
+                </View>
+                <TouchableOpacity style={styles.favoriteButton} onPress={toggleFavorite}>
+                    <Icon name={isFavorite ? "heart" : "heart-o"} size={24} color={isFavorite ? "red" : "black"} />
                 </TouchableOpacity>
             </View>
-            
-            <View style={styles.ticketContainer}>
-                <Text style={styles.ticketTitle}>Entrada General</Text>
-                <Text style={styles.ticketPrice}>$2000</Text>
-                <Picker
-                    selectedValue={selectedTicket}
-                    style={styles.ticketPicker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        setSelectedTicket(itemValue)
-                    }>
-                    <Picker.Item label="0" value="0" />
-                    <Picker.Item label="1" value="1" />
-                    {/* ... more items ... */}
-                </Picker>
+            <Text style={styles.eventDescription}>Description</Text>
+            <Text style={styles.descriptionText}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Text>
+            <View style={styles.quantityContainer}>
+                <Text style={styles.quantityLabel}>Quantity</Text>
+                <TextInput
+                    style={styles.quantityInput}
+                    onChangeText={(text) => setSelectedQuantity(text)}
+                    value={selectedQuantity}
+                    keyboardType="numeric"
+                />
             </View>
-            
             <TouchableOpacity style={styles.buyButton}>
-                <Text style={styles.buyButtonText}>COMPRAR</Text>
+                <Text style={styles.buyButtonText}>Comprar</Text>
             </TouchableOpacity>
-            
-            {/* Similar approach for the DJ tracks and reviews sections */}
+            {/* Comienza la sección de reseñas del evento */}
+            <View style={styles.reviewSection}>
+                <Text style={styles.reviewTitle}>Reseñas del evento</Text>
+                <View style={styles.reviewRatingContainer}>
+                    <Text style={styles.reviewRating}>4.9</Text>
+                    <Icon name="star" size={20} color="#FFD700" />
+                    <Text style={styles.reviewCount}>50 opiniones</Text>
+                </View>
+                <View style={styles.userReview}>
+                    <Text style={styles.username}>Usuario99</Text>
+                    <Text style={styles.reviewDate}>Hace 6 días</Text>
+                    <Text style={styles.reviewText}>Me gustó mucho la fiesta. Gente muy agradable. Volvería a ir.</Text>
+                </View>
+                <View style={styles.userReview}>
+                    <Text style={styles.username}>Usuario27</Text>
+                    <Text style={styles.reviewDate}>Hace 6 días</Text>
+                    <Text style={styles.reviewText}>Me gustó mucho la fiesta. La única crítica es que esperé 15 minutos en la fila para ingresar.</Text>
+                </View>
+                {/* Agrega más reseñas según sea necesario */}
+            </View>
         </ScrollView>
     );
 };
@@ -58,67 +67,114 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
+    eventImage: {
+        width: '100%',
+        height: 300,
+    },
+    detailsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
+    },
     eventName: {
         fontSize: 24,
         fontWeight: 'bold',
-        margin: 10,
     },
-    imageContainer: {
+    priceRatingContainer: {
+        flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 10,
     },
-    eventImage: {
-        width: '90%',
-        height: 200,
+    eventPrice: {
+        fontSize: 20,
+        color: 'green',
     },
-    eventDescription: {
-        margin: 10,
-    },
-    detailsContainer: {
-        margin: 10,
-    },
-    eventTime: {
-        fontSize: 16,
-    },
-    eventLocation: {
-        fontSize: 16,
-        marginBottom: 10,
-    },
-    directionButton: {
-        // Style as a button
-    },
-    directionButtonText: {
-        // Text style
+    eventRating: {
+        fontSize: 18,
+        marginLeft: 4, // Este margen acerca la estrella al rating
     },
     favoriteButton: {
-        // Style as a button
+        // El estilo que necesites
     },
-    favoriteButtonText: {
-        // Text style
+    eventDescription: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        padding: 10,
     },
-    ticketContainer: {
-        // Style the ticket section
+    descriptionText: {
+        fontSize: 14,
+        padding: 10,
     },
-    ticketTitle: {
-        // Title style
+    quantityContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: 10,
     },
-    ticketPrice: {
-        // Price style
+    quantityLabel: {
+        fontSize: 16,
+        fontWeight: 'bold',
     },
-    ticketPicker: {
-        // Picker style
+    quantityInput: {
+        borderWidth: 1,
+        borderColor: 'gray',
+        padding: 10,
+        width: 100,
+        height: 40,
+        fontSize: 16,
     },
     buyButton: {
-        backgroundColor: 'blue',
-        padding: 10,
-        margin: 10,
+        backgroundColor: 'black',
+        padding: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5,
+        marginTop: 20,
     },
     buyButtonText: {
         color: 'white',
-        textAlign: 'center',
+        fontSize: 18,
         fontWeight: 'bold',
     },
-    // Add styles for the DJ tracks and reviews sections
+    reviewSection: {
+        marginTop: 20,
+        padding: 10,
+    },
+    reviewTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
+    reviewRatingContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    reviewRating: {
+        fontSize: 18,
+        marginRight: 5,
+    },
+    reviewCount: {
+        fontSize: 16,
+        color: 'grey',
+        marginLeft: 5,
+    },
+    userReview: {
+        marginTop: 10,
+        paddingVertical: 10,
+    },
+    username: {
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+    reviewDate: {
+        fontSize: 14,
+        color: 'grey',
+        marginBottom: 5,
+    },
+    reviewText: {
+        fontSize: 14,
+    },
+    // Agrega los estilos adicionales que necesites
 });
 
 export default EventScreen;
