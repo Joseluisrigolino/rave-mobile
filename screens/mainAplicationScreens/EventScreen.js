@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { WebView } from 'react-native-webview';
+import Footer from '../../components/Footer';
+import Title from '../../components/Title';
 
 const EventScreen = () => {
     const [selectedQuantity, setSelectedQuantity] = useState('1');
     const [isFavorite, setIsFavorite] = useState(false);
 
     const toggleFavorite = () => setIsFavorite(!isFavorite);
+    const soundCloudAlbumUrl = 'https://soundcloud.com/lacintia/sets/menu?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
+    const youtubeVideoId = 'C_RzwnFLrDM&ab_channel=LACINTIA'; // Reemplaza esto con el ID de tu video
+    const youtubeUrl = `https://www.youtube.com/watch?v=${youtubeVideoId}`;
+    
 
-    return (
+return (
+    <View style={styles.container}>
+        <Title />
         <ScrollView style={styles.container}>
             <Image source={{ uri: 'https://picsum.photos/500' }} style={styles.eventImage} />
             <View style={styles.detailsContainer}>
@@ -35,9 +44,11 @@ const EventScreen = () => {
                     keyboardType="numeric"
                 />
             </View>
-            <TouchableOpacity style={styles.buyButton}>
-                <Text style={styles.buyButtonText}>Comprar</Text>
-            </TouchableOpacity>
+            <View style={styles.buyButtonContainer}>
+    <TouchableOpacity style={styles.buyButton}>
+        <Text style={styles.buyButtonText}>Comprar</Text>
+    </TouchableOpacity>
+</View>
             {/* Comienza la sección de reseñas del evento */}
             <View style={styles.reviewSection}>
                 <Text style={styles.reviewTitle}>Reseñas del evento</Text>
@@ -58,15 +69,38 @@ const EventScreen = () => {
                 </View>
                 {/* Agrega más reseñas según sea necesario */}
             </View>
-        </ScrollView>
+
+            {/* <WebView
+            style={styles.soundCloudWebView}
+            source={{ uri: soundCloudAlbumUrl }}
+            allowsInlineMediaPlayback
+            mediaPlaybackRequiresUserAction={false}
+        /> */}
+
+    {/* <View style={styles.separator} /> */}
+
+    {/* <WebView
+  style={styles.youtubeWebView}
+  source={{ uri: youtubeUrl }}
+  allowsInlineMediaPlayback
+  mediaPlaybackRequiresUserAction={false}
+  javaScriptEnabled={true}
+  domStorageEnabled={true}
+/> */}
+
+
+            </ScrollView>
+            <Footer></Footer>
+        </View>
+        
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 1, // Esto permite que la ScrollView maneje correctamente el contenido
         backgroundColor: '#fff',
-    },
+      },
     eventImage: {
         width: '100%',
         height: 300,
@@ -123,13 +157,20 @@ const styles = StyleSheet.create({
         height: 40,
         fontSize: 16,
     },
+    buyButtonContainer: {
+        justifyContent: 'center', // Centra el botón horizontalmente
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    
     buyButton: {
         backgroundColor: 'black',
-        padding: 15,
+        paddingVertical: 15,
+        paddingHorizontal: 30, // Puedes ajustar esto para cambiar el tamaño del botón horizontalmente
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
-        marginTop: 20,
+        // Establece un ancho fijo si es necesario, por ejemplo: width: 200,
     },
     buyButtonText: {
         color: 'white',
@@ -174,6 +215,20 @@ const styles = StyleSheet.create({
     reviewText: {
         fontSize: 14,
     },
+    soundCloudWebView: {
+        height: 200, // Ajusta la altura según tus necesidades
+        width: '100%',
+        marginVertical: 20,
+    },
+    separator: {
+        height: 20, // Ajusta la altura para más o menos espacio
+      },
+      
+      youtubeWebView: {
+        height: 200, // O la altura que prefieras
+    width: '100%',
+    marginVertical: 20,
+      },
     // Agrega los estilos adicionales que necesites
 });
 

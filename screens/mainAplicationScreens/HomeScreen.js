@@ -5,6 +5,7 @@ import Footer from '../../components/Footer';
 import Category from '../../components/Category';
 import EventCard from '../../components/EventCard';
 import SearchBar from '../../components/SearchBar';
+import Title from '../../components/Title';
 
 const HomeScreen = () => {
     const [likedEvents, setLikedEvents] = useState({});
@@ -37,11 +38,8 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <View style={styles.titleContainer}>
-                    <Text style={styles.headerText}>Rave App</Text>
-                </View>
-            </View>
+            <Title />
+
             <View style={styles.topBar}>
                 <TouchableOpacity>
                     <Icon2 name="user-circle-o" size={24} color="#000" />
@@ -85,18 +83,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#f5f5f5',
         paddingBottom: 0,
-    },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#000',
-        padding: 10,
-    },
-    headerText: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#ffffff',
     },
     menu: {
         flexDirection: 'row',
