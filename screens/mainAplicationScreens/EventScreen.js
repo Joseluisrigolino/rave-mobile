@@ -70,23 +70,26 @@ return (
                 {/* Agrega más reseñas según sea necesario */}
             </View>
 
-            {/* <WebView
+            
+            <WebView
             style={styles.soundCloudWebView}
             source={{ uri: soundCloudAlbumUrl }}
             allowsInlineMediaPlayback
             mediaPlaybackRequiresUserAction={false}
-        /> */}
+        />
 
-    {/* <View style={styles.separator} /> */}
+    <View style={styles.separator} />
 
-    {/* <WebView
+    <WebView
   style={styles.youtubeWebView}
   source={{ uri: youtubeUrl }}
   allowsInlineMediaPlayback
   mediaPlaybackRequiresUserAction={false}
   javaScriptEnabled={true}
   domStorageEnabled={true}
-/> */}
+/>
+
+            
 
 
             </ScrollView>
@@ -216,7 +219,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     soundCloudWebView: {
-        height: 200, // Ajusta la altura según tus necesidades
+        height: 400, // Ajusta la altura según tus necesidades
         width: '100%',
         marginVertical: 20,
     },
@@ -225,9 +228,9 @@ const styles = StyleSheet.create({
       },
       
       youtubeWebView: {
-        height: 200, // O la altura que prefieras
-    width: '100%',
-    marginVertical: 20,
+        height: 400, // O la altura que prefieras
+        width: '100%',
+        marginVertical: 20,
       },
     // Agrega los estilos adicionales que necesites
 });

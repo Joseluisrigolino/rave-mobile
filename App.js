@@ -3,6 +3,7 @@ import React from 'react';
 import LoginScreen from './screens/startAplicationScreens/LoginScreen';
 import HomeScreen from './screens/mainAplicationScreens/HomeScreen';
 import EventScreen from './screens/mainAplicationScreens/EventScreen';
+import AddEventScreen from './screens/mainAplicationScreens/AddEventScreen';
 import { View } from 'react-native-web';
 //importar register nav
 import RegisterAccountScreen from './screens/startAplicationScreens/registerScreens/RegisterAccountScreen';
@@ -11,6 +12,7 @@ import RegisterAccountCodeScreen from './screens/startAplicationScreens/register
 import RestoreAccountScreen from "./screens/startAplicationScreens/restoreScreens/RestoreAccountScreen";
 import RestoreAccountCodeScreen from "./screens/startAplicationScreens/restoreScreens/RestoreAccountCodeScreen";
 import RestoreAccountCodePosScreen from "./screens/startAplicationScreens/restoreScreens/RestoreAccountCodePosScreen";
+import NewsScreen from './screens/mainAplicationScreens/NewsScreen';
 //importar libreria de navegacion
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -33,8 +35,9 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer> */
 
-    <EventScreen></EventScreen>
-    
+    /* <EventScreen></EventScreen> */
+     /* <AddEventScreen></AddEventScreen>  */
+     <NewsScreen></NewsScreen> 
 
   );
 }
