@@ -13,10 +13,12 @@ import RestoreAccountScreen from "./screens/startAplicationScreens/restoreScreen
 import RestoreAccountCodeScreen from "./screens/startAplicationScreens/restoreScreens/RestoreAccountCodeScreen";
 import RestoreAccountCodePosScreen from "./screens/startAplicationScreens/restoreScreens/RestoreAccountCodePosScreen";
 import NewsScreen from './screens/mainAplicationScreens/NewsScreen';
+import ArriveScreen from './screens/mainAplicationScreens/ArriveScreen';
 //importar libreria de navegacion
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import EventFavScreen from './screens/mainAplicationScreens/EventsFavScreen';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -37,7 +39,10 @@ export default function App() {
 
     /* <EventScreen></EventScreen> */
      /* <AddEventScreen></AddEventScreen>  */
-     <NewsScreen></NewsScreen> 
+     /* <NewsScreen></NewsScreen>  */
+     /* <ArriveScreen></ArriveScreen> */
+      <EventFavScreen></EventFavScreen>
+
 
   );
 }
