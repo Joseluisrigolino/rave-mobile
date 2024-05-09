@@ -33,7 +33,6 @@ const NewsScreen = () => {
         ))}
       </ScrollView>
       <Footer />
-
       <Modal
         animationType="slide"
         transparent={true}
@@ -58,20 +57,10 @@ const NewsScreen = () => {
   );
 };
 
-
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 20,
-    backgroundColor: '#000',
-    color: '#fff',
-    padding: 10,
   },
   headerSubtitle: {
     fontSize: 18,
@@ -89,21 +78,23 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   newsItem: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
     marginBottom: 20,
     borderWidth: 1,
     borderColor: 'grey',
     padding: 10,
+    width: '100%',
   },
   newsImage: {
-    width: 100,
-    height: 100,
-    marginRight: 20,
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
   },
   newsTitle: {
     fontSize: 16,
     fontWeight: 'bold',
+    marginTop: 10,
   },
   centeredView: {
     flex: 1,
@@ -132,10 +123,16 @@ const styles = StyleSheet.create({
     height: 250,
     marginBottom: 15,
   },
-  description: {
+  modalTitle: {
     marginBottom: 15,
     textAlign: 'center',
     fontSize: 18,
+  },
+  modalDescription: {
+    textAlign: 'center',
+    fontSize: 14,
+    color: 'grey',
+    marginBottom: 15,
   },
   buttonClose: {
     backgroundColor: '#2196F3',
@@ -148,18 +145,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  modalTitle: {
-    marginBottom: 15,
-    textAlign: 'center',
-    fontSize: 18,
-  },
-  modalDescription: {
-    textAlign: 'center',
-    fontSize: 14, // Tamaño más pequeño para la descripción
-    color: 'grey', // Opcional: cambiar el color para diferenciar
-    marginBottom: 15,
-  },
 });
-
 
 export default NewsScreen;

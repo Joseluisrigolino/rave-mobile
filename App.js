@@ -19,7 +19,7 @@ import ArriveScreen from './screens/mainAplicationScreens/ArriveScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import EventFavScreen from './screens/mainAplicationScreens/EventsFavScreen';
-import Artists from './screens/mainAplicationScreens/Artists';
+import ArtistsScreen from './screens/mainAplicationScreens/ArtistsScreen';
 
 
 export default function App() {
@@ -41,10 +41,10 @@ export default function App() {
 
     /* <EventScreen></EventScreen> */
     /* <AddEventScreen></AddEventScreen>  */
-    <NewsScreen></NewsScreen> 
+    /* <NewsScreen></NewsScreen>  */
     /* <ArriveScreen></ArriveScreen> */
     /* <EventFavScreen></EventFavScreen> */
-    /* <Artists></Artists> */
+    <ArtistsScreen></ArtistsScreen>
     
 
   );

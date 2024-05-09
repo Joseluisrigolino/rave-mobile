@@ -3,29 +3,24 @@ import { View, Text, Image, StyleSheet, ScrollView, TextInput } from 'react-nati
 import Title from '../../components/Title';
 import Footer from '../../components/Footer';
 
-const Artists = () => {
+const ArtistsScreen = () => {
     const initialArtists = [
         { id: 1, nombre: 'Zapata', imagen: 'https://picsum.photos/200' },
         { id: 2, nombre: 'Artista 2', imagen: 'https://picsum.photos/220' },
-        { id: 3, nombre: 'banco', imagen: 'https://picsum.photos/230' },
+        { id: 3, nombre: 'Banco', imagen: 'https://picsum.photos/230' },
         { id: 4, nombre: 'Artista 4', imagen: 'https://picsum.photos/240' },
         { id: 5, nombre: 'Artista 5', imagen: 'https://picsum.photos/250' },
-        // Agrega más artistas según sea necesario
     ];
 
-    const [artists, setArtists] = useState(initialArtists);
+    const [artists, setArtists] = useState(initialArtists.sort((a, b) => a.nombre.localeCompare(b.nombre)));
     const [searchQuery, setSearchQuery] = useState('');
 
     const handleSearch = (text) => {
         setSearchQuery(text);
-        if (text === '') {
-            setArtists(initialArtists);
-        } else {
-            const filteredArtists = initialArtists.filter(artist =>
-                artist.nombre.toLowerCase().includes(text.toLowerCase())
-            );
-            setArtists(filteredArtists);
-        }
+        const filteredAndSortedArtists = initialArtists
+            .filter(artist => artist.nombre.toLowerCase().includes(text.toLowerCase()))
+            .sort((a, b) => a.nombre.localeCompare(b.nombre));
+        setArtists(filteredAndSortedArtists);
     };
 
     return (
@@ -97,4 +92,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Artists;
+export default ArtistsScreen;
