@@ -1,14 +1,14 @@
-import { React, useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import Icon2 from 'react-native-vector-icons/FontAwesome';
 import Footer from '../../components/Footer';
 import Category from '../../components/Category';
 import EventCard from '../../components/EventCard';
-import SearchBar from '../../components/SearchBar';
 import Title from '../../components/Title';
 
 const HomeScreen = () => {
     const [likedEvents, setLikedEvents] = useState({});
+    const [searchQuery, setSearchQuery] = useState('');
     const categories = ['Acid', 'Dubstep', 'House', 'Trance', 'Drum and bass', 'EDM', 'Crunk'];
     const events = [
         {
@@ -36,10 +36,13 @@ const HomeScreen = () => {
         }));
     };
 
+    const filteredEvents = events.filter(event => 
+        event.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
         <View style={styles.container}>
             <Title />
-
             <View style={styles.topBar}>
                 <TouchableOpacity>
                     <Icon2 name="user-circle-o" size={24} color="#000" />
@@ -52,7 +55,12 @@ const HomeScreen = () => {
                     <Icon2 name="bell-o" size={24} color="#000" />
                 </TouchableOpacity>
             </View>
-            <SearchBar placeholder="Buscar evento" />
+            <TextInput
+                style={styles.searchBar}
+                placeholder="Buscar evento"
+                value={searchQuery}
+                onChangeText={setSearchQuery}
+            />
             <View style={styles.menu}>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.menuScrollView}>
                     {categories.map((category, index) => (
@@ -61,7 +69,7 @@ const HomeScreen = () => {
                 </ScrollView>
             </View>
             <ScrollView style={styles.cardsContainer}>
-                {events.map(event => (
+                {filteredEvents.map(event => (
                     <EventCard
                         key={event.id}
                         eventName={event.name}
@@ -83,6 +91,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#f5f5f5',
         paddingBottom: 0,
+    },
+    searchBar: {
+        fontSize: 16,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 8,
+        padding: 10,
+        margin: 10,
     },
     menu: {
         flexDirection: 'row',

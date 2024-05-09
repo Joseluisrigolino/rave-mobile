@@ -19,30 +19,33 @@ import ArriveScreen from './screens/mainAplicationScreens/ArriveScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import EventFavScreen from './screens/mainAplicationScreens/EventsFavScreen';
+import Artists from './screens/mainAplicationScreens/Artists';
+
 
 export default function App() {
   const Stack = createStackNavigator();
   return (
 
-     /* <NavigationContainer>
-      <Stack.Navigator initialRouteName="Index">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="RegisterAccountScreen" component={RegisterAccountScreen} />
-        <Stack.Screen name="RegisterAccountCodeScreen" component={RegisterAccountCodeScreen} />
-        <Stack.Screen name="RestoreAccountCodeScreen" component={RestoreAccountCodeScreen} />
-        <Stack.Screen name="RestoreAccountScreen" component={RestoreAccountScreen} />
-        <Stack.Screen name="RestoreAccountCodePosScreen" component={RestoreAccountCodePosScreen} />
-        <Stack.Screen name="EventScreen" component={EventScreen} />
-        <Stack.Screen name="Index" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer> */
+    /* <NavigationContainer>
+     <Stack.Navigator initialRouteName="Index">
+       <Stack.Screen name="Login" component={LoginScreen} />
+       <Stack.Screen name="RegisterAccountScreen" component={RegisterAccountScreen} />
+       <Stack.Screen name="RegisterAccountCodeScreen" component={RegisterAccountCodeScreen} />
+       <Stack.Screen name="RestoreAccountCodeScreen" component={RestoreAccountCodeScreen} />
+       <Stack.Screen name="RestoreAccountScreen" component={RestoreAccountScreen} />
+       <Stack.Screen name="RestoreAccountCodePosScreen" component={RestoreAccountCodePosScreen} />
+       <Stack.Screen name="EventScreen" component={EventScreen} />
+       <Stack.Screen name="Index" component={HomeScreen} />
+     </Stack.Navigator>
+   </NavigationContainer> */
 
     /* <EventScreen></EventScreen> */
-     /* <AddEventScreen></AddEventScreen>  */
-     /* <NewsScreen></NewsScreen>  */
-     /* <ArriveScreen></ArriveScreen> */
-      <EventFavScreen></EventFavScreen>
-
+    /* <AddEventScreen></AddEventScreen>  */
+    <NewsScreen></NewsScreen> 
+    /* <ArriveScreen></ArriveScreen> */
+    /* <EventFavScreen></EventFavScreen> */
+    /* <Artists></Artists> */
+    
 
   );
 }
