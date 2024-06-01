@@ -21,6 +21,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import EventFavScreen from './screens/mainAplicationScreens/EventsFavScreen';
 import ArtistsScreen from './screens/mainAplicationScreens/ArtistsScreen';
 import ArtistScreen from './screens/mainAplicationScreens/ArtistScreen';
+import ModificationPersonalScreen from './screens/mainAplicationScreens/ModificationPersonalScreen';
 
 
 export default function App() {
@@ -46,7 +47,8 @@ export default function App() {
     /* <ArriveScreen></ArriveScreen> */
     /* <EventFavScreen></EventFavScreen> */
     /* <ArtistsScreen></ArtistsScreen> */
-    <ArtistScreen></ArtistScreen>
+    /* <ArtistScreen></ArtistScreen> */
+    <ModificationPersonalScreen></ModificationPersonalScreen>
     
 
   );
