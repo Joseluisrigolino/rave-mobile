@@ -22,6 +22,9 @@ import EventFavScreen from './screens/mainAplicationScreens/EventsFavScreen';
 import ArtistsScreen from './screens/mainAplicationScreens/ArtistsScreen';
 import ArtistScreen from './screens/mainAplicationScreens/ArtistScreen';
 import ModificationPersonalScreen from './screens/mainAplicationScreens/ModificationPersonalScreen';
+import CreateNewScreen from './screens/mainAplicationScreens/CreateNewScreen';
+import BuyEventScreen from './screens/mainAplicationScreens/BuyEventScreen';
+import PurchasedEvent from './screens/mainAplicationScreens/PurchasedEvent';
 
 
 export default function App() {
@@ -48,7 +51,11 @@ export default function App() {
     /* <EventFavScreen></EventFavScreen> */
     /* <ArtistsScreen></ArtistsScreen> */
     /* <ArtistScreen></ArtistScreen> */
-    <ModificationPersonalScreen></ModificationPersonalScreen>
+    /* <ModificationPersonalScreen></ModificationPersonalScreen> */
+    /* <CreateNewScreen></CreateNewScreen> */
+    /* <BuyEventScreen></BuyEventScreen> */
+    <PurchasedEvent></PurchasedEvent>
+
     
 
   );
