@@ -61,6 +61,7 @@ const BuyEventScreen = () => {
           }>
           <Picker.Item label="DNI" value="DNI" />
           <Picker.Item label="CUIL" value="CUIL" />
+          <Picker.Item label="PASAPORTE" value="Pasaporte" />
         </Picker>
         <TextInput
           style={styles.input}

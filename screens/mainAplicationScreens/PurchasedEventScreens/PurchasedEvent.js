@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
-import Title from '../../components/Title';
-import Footer from '../../components/Footer';
+import Title from '../../../components/Title';
+import Footer from '../../../components/Footer';
 
 const PurchasedEvent = () => {
   const initialEvents = [

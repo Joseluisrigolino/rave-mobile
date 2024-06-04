@@ -24,7 +24,8 @@ import ArtistScreen from './screens/mainAplicationScreens/ArtistScreen';
 import ModificationPersonalScreen from './screens/mainAplicationScreens/ModificationPersonalScreen';
 import CreateNewScreen from './screens/mainAplicationScreens/CreateNewScreen';
 import BuyEventScreen from './screens/mainAplicationScreens/BuyEventScreen';
-import PurchasedEvent from './screens/mainAplicationScreens/PurchasedEvent';
+import PurchasedEvent from './screens/mainAplicationScreens/PurchasedEventScreens/PurchasedEvent';
+import PurchasedEventDescription from './screens/mainAplicationScreens/PurchasedEventScreens/PurchasedEventDescription';
 
 
 export default function App() {
@@ -32,7 +33,7 @@ export default function App() {
   return (
 
     /* <NavigationContainer>
-     <Stack.Navigator initialRouteName="Index">
+     <Stack.Navigator initialRouteName="Login">
        <Stack.Screen name="Login" component={LoginScreen} />
        <Stack.Screen name="RegisterAccountScreen" component={RegisterAccountScreen} />
        <Stack.Screen name="RegisterAccountCodeScreen" component={RegisterAccountCodeScreen} />
@@ -53,8 +54,9 @@ export default function App() {
     /* <ArtistScreen></ArtistScreen> */
     /* <ModificationPersonalScreen></ModificationPersonalScreen> */
     /* <CreateNewScreen></CreateNewScreen> */
-    /* <BuyEventScreen></BuyEventScreen> */
-    <PurchasedEvent></PurchasedEvent>
+    <BuyEventScreen></BuyEventScreen>
+    /* <PurchasedEvent></PurchasedEvent> */
+    /* <PurchasedEventDescription></PurchasedEventDescription> */
 
     
 
