@@ -13,11 +13,11 @@ import {
 } from 'react-native';
 
 import { Picker } from '@react-native-picker/picker';
-import Title from '../../components/Title';
-import Footer from '../../components/Footer';
+import Title from '../../../components/Title';
+import Footer from '../../../components/Footer';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-const AddEventScreen = () => {
+const ModifyEventScreen = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -392,4 +392,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AddEventScreen;
+export default ModifyEventScreen;

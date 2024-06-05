@@ -3,7 +3,7 @@ import React from 'react';
 import LoginScreen from './screens/startAplicationScreens/LoginScreen';
 import HomeScreen from './screens/mainAplicationScreens/HomeScreen';
 import EventScreen from './screens/mainAplicationScreens/EventScreen';
-import AddEventScreen from './screens/mainAplicationScreens/AddEventScreen';
+import AddEventScreen from './screens/mainAplicationScreens/OwnerEventsScreens/AddEventScreen';
 import { View } from 'react-native-web';
 //importar register nav
 import RegisterAccountScreen from './screens/startAplicationScreens/registerScreens/RegisterAccountScreen';
@@ -26,8 +26,8 @@ import CreateNewScreen from './screens/mainAplicationScreens/CreateNewScreen';
 import BuyEventScreen from './screens/mainAplicationScreens/BuyEventScreen';
 import PurchasedEvent from './screens/mainAplicationScreens/PurchasedEventScreens/PurchasedEvent';
 import PurchasedEventDescription from './screens/mainAplicationScreens/PurchasedEventScreens/PurchasedEventDescription';
-
-
+import MyEventsScreen from './screens/mainAplicationScreens/OwnerEventsScreens/MyEventsScreen';
+import ModifyEventScreen from './screens/mainAplicationScreens/OwnerEventsScreens/MyEventsScreen';
 export default function App() {
   const Stack = createStackNavigator();
   return (
@@ -54,9 +54,10 @@ export default function App() {
     /* <ArtistScreen></ArtistScreen> */
     /* <ModificationPersonalScreen></ModificationPersonalScreen> */
     /* <CreateNewScreen></CreateNewScreen> */
-    <BuyEventScreen></BuyEventScreen>
+    /* <BuyEventScreen></BuyEventScreen> */
     /* <PurchasedEvent></PurchasedEvent> */
     /* <PurchasedEventDescription></PurchasedEventDescription> */
+    <MyEventsScreen></MyEventsScreen>
 
     
 
