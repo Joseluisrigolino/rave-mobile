@@ -110,6 +110,9 @@ const ModifyEventScreen = () => {
     <SafeAreaView style={styles.safeArea}>
       <Title style={styles.fullWidth} />
       <Text style={styles.headerSubtitle}>Crear evento</Text>
+      <Text style={styles.clarification}>
+        *Aclaración: Si debes modificar la dirección, la fecha, el horario, o los artistas que toquen en la fiesta, se le enviará un mail automáticamente a los usuarios que ya hayan adquirido una entrada, para notificarles de los cambios, con la opción de devolución/reembolso de la entrada.
+      </Text>
       <ScrollView style={styles.scrollView}>
         <View style={styles.container}>
           <Text style={styles.label}>Nombre Organizador:</Text>
@@ -238,7 +241,8 @@ const ModifyEventScreen = () => {
     display="default"
     onChange={onChange}
   /> */}
-          <Button title="Crear Evento" onPress={handleSubmit} />
+          <Button title="Modificar Evento" onPress={handleSubmit} />
+                    
         </View>
       </ScrollView>
       <Footer style={styles.fullWidth} />
@@ -390,6 +394,12 @@ const styles = StyleSheet.create({
       borderRadius: 4,
       marginBottom: 10, // Ajusta esto para la separación vertical entre botones
     },
+    clarification: {
+        fontSize: 14,
+        color: 'red',
+        padding: 10,
+        textAlign: 'justify',
+      },
 });
 
 export default ModifyEventScreen;

@@ -27,7 +27,8 @@ import BuyEventScreen from './screens/mainAplicationScreens/BuyEventScreen';
 import PurchasedEvent from './screens/mainAplicationScreens/PurchasedEventScreens/PurchasedEvent';
 import PurchasedEventDescription from './screens/mainAplicationScreens/PurchasedEventScreens/PurchasedEventDescription';
 import MyEventsScreen from './screens/mainAplicationScreens/OwnerEventsScreens/MyEventsScreen';
-import ModifyEventScreen from './screens/mainAplicationScreens/OwnerEventsScreens/MyEventsScreen';
+import ModifyEventScreen from './screens/mainAplicationScreens/OwnerEventsScreens/ModifyEventScreen';
+
 export default function App() {
   const Stack = createStackNavigator();
   return (
@@ -57,7 +58,8 @@ export default function App() {
     /* <BuyEventScreen></BuyEventScreen> */
     /* <PurchasedEvent></PurchasedEvent> */
     /* <PurchasedEventDescription></PurchasedEventDescription> */
-    <MyEventsScreen></MyEventsScreen>
+    /* <MyEventsScreen></MyEventsScreen> */
+    <ModifyEventScreen></ModifyEventScreen>
 
     
 
